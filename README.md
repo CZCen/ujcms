@@ -228,9 +228,3 @@ lower_case_table_names=2
 * gulpfile.js：前台构建文件。具有拷贝 jquery、bootstrap 等文件至前台模板目录 `/src/main/webapp/template/1/default/_files` 的功能。
 * package.json：前台模板依赖的 js、css 组件，如 jquery、bootstrap 等。
 * pom.xml：Maven 配置文件。
-
-## 交流群
-
-QQ 交流群：626599871
-
-微信交流群：![UJCMS 交流群](https://res.ujcms.com/uploads/images/ujcms-group.png)
