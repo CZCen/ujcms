@@ -1,7 +1,7 @@
 {
-  "name": "ujcms-template",
+  "name": "shensilian-template",
   "version": "1.0.0",
-  "description": "UJCMS网站模板",
+  "description": "深斯联网站模板",
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.12.1",

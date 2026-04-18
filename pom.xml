@@ -9,11 +9,11 @@
   <version>10.1.5</version>
   <packaging>${project.packaging}</packaging>
 
-  <name>UJCMS</name>
+  <name>深斯联</name>
   <description>
-    UJCMS 是基于 Java 的 CMS 网站内容系统。使用 SpringBoot、MyBatis、Vite、Vue3、ElementPlus、TailwindCSS 等技术开发。
+    深斯联是基于 Java 的 CMS 网站内容系统。使用 SpringBoot、MyBatis、Vite、Vue3、ElementPlus、TailwindCSS 等技术开发。
   </description>
-  <url>https://www.ujcms.com</url>
+  <url>https://www.fdaitech.com</url>
   <inceptionYear>2021-present</inceptionYear>
 
   <parent>

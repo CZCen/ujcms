@@ -9,7 +9,7 @@ echo >&2 "Current dir: $PWD"
 # 检查 cp 是否需要更新
 if [[ -e static/cp/.timestamp && -e /usr/src/ujcms/cp/.timestamp ]]; then
   if ! cmp -s static/cp/.timestamp /usr/src/ujcms/cp/.timestamp; then
-    echo >&2 "Migrating UJCMS cp from old version..."
+    echo >&2 "Migrating 深斯联 cp from old version..."
     rm -rf static/cp/*
 
     # cp /usr/src/ujcms/cp/* /ujcms/static/cp/
@@ -25,7 +25,7 @@ if [[ -e static/cp/.timestamp && -e /usr/src/ujcms/cp/.timestamp ]]; then
       --directory /ujcms/static/cp
     )
     tar "${sourceTarArgs[@]}" . | tar "${targetTarArgs[@]}"
-    echo >&2 "Migration UJCMS cp complete!"
+    echo >&2 "Migration 深斯联 cp complete!"
   fi
 fi
 
@@ -33,7 +33,7 @@ fi
 if [ ! -d static/uploads ] && [ ! -d static/templates ] && [ ! -d static/cp ] \
     && [ ! -e static/index.html ] && [ ! -e static/index.htm ]; then
 
-  echo >&2 "UJCMS init files not found in $PWD/static - copying now..."
+  echo >&2 "深斯联 init files not found in $PWD/static - copying now..."
   if [ -n "$(find static -mindepth 1 -maxdepth 1 -not -name 'lost+found')" ]; then
     echo >&2 "WARNING: $PWD/static is not empty! (copying anyhow)"
   fi
@@ -55,8 +55,8 @@ if [ ! -d static/uploads ] && [ ! -d static/templates ] && [ ! -d static/cp ] \
     targetTarArgs+=( --keep-old-files )
   fi
   tar "${sourceTarArgs[@]}" . | tar "${targetTarArgs[@]}"
-  echo >&2 "Complete! UJCMS init files has been successfully copied to $PWD/static"
+  echo >&2 "Complete! 深斯联 init files has been successfully copied to $PWD/static"
 fi
 
-echo >&2 "Starting UJCMS..."
+echo >&2 "Starting 深斯联..."
 exec "$@"

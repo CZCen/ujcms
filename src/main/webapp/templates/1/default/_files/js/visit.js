@@ -1,12 +1,12 @@
 ;(function () {
-    const VISIT_UNIQUE_VISITOR_NAME = 'ujcms-visit-unique-visitor';
-    const VISIT_SESSION_ID_NAME = 'ujcms-visit-session-id';
-    const VISIT_ENTRY_URL_NAME = 'ujcms-visit-entry-url';
-    const VISIT_NEW_VISITOR_NAME = 'ujcms-new-visitor';
-    const VISIT_START_NAME = 'ujcms-visit-start';
-    const VISIT_DURATION_NAME = 'ujcms-visit-duration';
-    const VISIT_OPENS_NAME = 'ujcms-visit-opens';
-    const VISIT_HIDDEN_NAME = 'ujcms-visit-hidden';
+    const VISIT_UNIQUE_VISITOR_NAME = 'shensilian-visit-unique-visitor';
+    const VISIT_SESSION_ID_NAME = 'shensilian-visit-session-id';
+    const VISIT_ENTRY_URL_NAME = 'shensilian-visit-entry-url';
+    const VISIT_NEW_VISITOR_NAME = 'shensilian-new-visitor';
+    const VISIT_START_NAME = 'shensilian-visit-start';
+    const VISIT_DURATION_NAME = 'shensilian-visit-duration';
+    const VISIT_OPENS_NAME = 'shensilian-visit-opens';
+    const VISIT_HIDDEN_NAME = 'shensilian-visit-hidden';
 
     // 获取独立访客标识
     function getEntryUrl() {

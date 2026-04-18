@@ -1,16 +1,12 @@
-# UJCMS
+# 深斯联
 
-UJCMS 是一款基于 Java 的开源企业级网站内容管理系统（Java CMS），采用 SpringBoot、MyBatis、Spring Security、Vue3、Vite、ElementPlus 等前沿技术开发，支持 `无头 CMS` 架构。系统提供 `模板 + 标签` 和 `Vue (React) + API` 两种开发模式，适用于传统模板渲染和现代化前后端分离场景，为网站的建设、管理与维护提供高效、灵活、可靠的解决方案。
+深斯联是一款基于 Java 的企业级网站内容管理系统（Java CMS），采用 SpringBoot、MyBatis、Spring Security、Vue3、Vite、ElementPlus 等技术开发，支持 `无头 CMS` 架构。系统提供 `模板 + 标签` 和 `Vue (React) + API` 两种开发模式，适用于传统模板渲染和现代化前后端分离场景，为网站的建设、管理与维护提供高效、灵活、可靠的解决方案。
 
 使用 `Apache-2.0` 开源协议，可免费用于商业用途。
 
 ## 资源地址
 
-* 演示站前台：[https://demo.ujcms.com](https://demo.ujcms.com)
-* 演示站后台：[https://demo.ujcms.com/cp/](https://demo.ujcms.com/cp/)
-* 官方网站：[https://www.ujcms.com](https://www.ujcms.com)
-* 官方文档：[https://www.ujcms.com](https://www.ujcms.com)
-* 安装包下载：[https://www.ujcms.com/downloads/](https://www.ujcms.com/downloads/)
+* 官方网站：[https://www.fdaitech.com](https://www.fdaitech.com)
 
 ## 环境要求
 
@@ -164,7 +160,7 @@ ujcms.data-sql-enabled: false
 
 因为 Linux 环境下 MySQL 的表名是大小写敏感的；而在 Windows 环境下 MySQL 表名大小写不敏感，且会自动把大写的表名改为小写的表名。从 Windows 向 Linux 迁移数据时，本为大写表名的成为了小写表名，导致程序出错。需要手动把小写表名改回大写表名，费时费力且容易出错。
 
-UJCMS 系统的表名都为小写，不管在 Window 还是 Linux 下都没有问题，但第三方的类库（如 Liquibase、Flowable、Quartz 等）创建的表则为大写表名。所以 Windows 环境下也把 MySQL 设置成表名大小写敏感，有利以后迁移数据。
+深斯联系统的表名都为小写，不管在 Window 还是 Linux 下都没有问题，但第三方的类库（如 Liquibase、Flowable、Quartz 等）创建的表则为大写表名。所以 Windows 环境下也把 MySQL 设置成表名大小写敏感，有利以后迁移数据。
 
 可修改 MySQL 配置文件 `my.ini`：
 

@@ -72,7 +72,7 @@ import ua_parser.Parser;
 public class Application extends SpringBootServletInitializer
         implements ApplicationContextAware {
     /**
-     * UJCMS 配置
+     * 深斯联配置
      */
     @Bean
     public Props props() {

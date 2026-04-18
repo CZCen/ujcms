@@ -21,7 +21,7 @@ public class SwaggerConfig {
      */
     @Bean
     public OpenAPI openApi(@Value("${ujcms.version}") String version) {
-        return new OpenAPI().info(new Info().title("UJCMS API").description("UJCMS 接口文档").version(version));
+        return new OpenAPI().info(new Info().title("深斯联 API").description("深斯联接口文档").version(version));
     }
 
     /**
@@ -32,7 +32,7 @@ public class SwaggerConfig {
     @Bean
     public GroupedOpenApi frontendGroup(@Value("${ujcms.version}") String version) {
         return GroupedOpenApi.builder().group("frontend").displayName("前台API")
-                .addOpenApiCustomizer(openApi -> openApi.info(new Info().title("UJCMS 前台 API").version(version)))
+                .addOpenApiCustomizer(openApi -> openApi.info(new Info().title("深斯联前台 API").version(version)))
                 .packagesToScan("com.ujcms.cms.core.web.api", "com.ujcms.cms.ext.web.api")
                 .pathsToMatch("/api/**")
                 .build();
@@ -48,7 +48,7 @@ public class SwaggerConfig {
     // @Bean
     // public GroupedOpenApi backendGroup(@Value("${ujcms.version}") String version) {
     //     return GroupedOpenApi.builder().group("backend").displayName("后台API")
-    //             .addOpenApiCustomizer(openApi -> openApi.info(new Info().title("UJCMS 后台 API").version(version)))
+    //             .addOpenApiCustomizer(openApi -> openApi.info(new Info().title("深斯联后台 API").version(version)))
     //             .packagesToScan("com.ujcms.cms.core.web.backendapi")
     //             .pathsToMatch("/api/backend/**")
     //             .addOpenApiCustomizer(openApi -> openApi.components(new Components()

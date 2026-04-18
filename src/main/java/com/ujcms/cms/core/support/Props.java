@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * UJCMS 系统配置。部分属性使用静态属性，方便实体类调用。
+ * 深斯联系统配置。部分属性使用静态属性，方便实体类调用。
  *
  * @author PONY
  */
