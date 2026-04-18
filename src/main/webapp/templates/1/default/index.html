@@ -1,0 +1,119 @@
+<!doctype html>
+[#escape x as (x)!?html]
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>${site.title}</title>
+  <meta name="keywords" content="${site.seoKeywords}">
+  <meta name="description" content="${site.seoDescription}">
+  <meta name="_csrf" content="${_csrf.token}"/>
+  <meta name="_csrf_header" content="${_csrf.headerName}"/>
+  [#include 'inc_meta.html'/]
+  [#include 'inc_css.html'/]
+  [#include 'inc_js.html'/]
+  [#if config.greyStyle]
+    <style>
+      body {
+        filter: grayscale(.95);
+        -webkit-filter: grayscale(.95);
+      }
+    </style>
+  [/#if]
+</head>
+<body>
+[#assign headerShadow=true/]
+[#include 'inc_header.html'/]
+<main class="home-page">
+  [@BlockItemList block='focus' limit='5'; beans]
+    <section class="home-hero" aria-label="Home banner">
+      <div id="homeHeroCarousel" class="carousel slide home-hero-carousel" data-ride="carousel">
+        <ol class="carousel-indicators home-hero-indicators">
+          [#list beans as bean]
+            <li data-target="#homeHeroCarousel" data-slide-to="${bean_index?c}" class="[#if bean_index==0]active[/#if]"></li>
+          [/#list]
+        </ol>
+        <div class="carousel-inner home-hero-inner">
+          [#list beans as bean]
+            <div class="carousel-item home-hero-item[#if bean_index==0] active[/#if]">
+              [@A bean=bean class="home-hero-link"]
+                <img src="${bean.image}" class="d-block w-100 home-hero-img" alt="${bean.title}">
+              [/@A]
+            </div>
+          [/#list]
+        </div>
+        <a class="carousel-control-prev home-hero-control" href="#homeHeroCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next home-hero-control" href="#homeHeroCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+    <script>$('#homeHeroCarousel').carousel();</script>
+  [/@BlockItemList]
+  <section class="home-overview">
+    <div class="container">
+      <div class="home-section-head">
+        <div>
+          <div class="home-section-eyebrow">OVERVIEW</div>
+          <h2 class="home-section-title">栏目概览</h2>
+        </div>
+        <p class="home-section-desc">快速了解网站各主要栏目，查看核心业务、系统应用、产品与最新动态。</p>
+      </div>
+
+      [@ChannelList isNav='true' offset='0'; channels]
+        <div class="home-column-grid">
+          [#list channels as homeChannel]
+            <article class="home-column-card">
+              <div class="home-column-card-head">
+                <span class="home-column-index">0${homeChannel_index + 1}</span>
+                [@A bean=homeChannel class="home-column-title text-decoration-none"]${homeChannel.name}[/@A]
+              </div>
+              <p class="home-column-desc">
+                [#if homeChannel.seoDescription?has_content]
+                  ${substring(homeChannel.seoDescription, 92, '...')}
+                [#else]
+                  查看${homeChannel.name}相关内容，了解更多业务介绍、方案能力与资讯动态。
+                [/#if]
+              </p>
+
+              [@ChannelList parentId=homeChannel.id isNav='true'; children]
+                [#if children?size gt 0]
+                  <div class="home-column-tags">
+                    [#list children as child]
+                      [#if child_index lt 4]
+                        [@A bean=child class="home-column-tag text-decoration-none"]${child.name}[/@A]
+                      [/#if]
+                    [/#list]
+                  </div>
+                [/#if]
+              [/@ChannelList]
+
+              [@ArticleList channelId=homeChannel.id isIncludeSubChannel='true' limit='2' orderBy='publishDate_desc'; articles]
+                [#if articles?size gt 0]
+                  <ul class="home-column-news list-unstyled">
+                    [#list articles as article]
+                      <li>
+                        [@A bean=article class="home-column-news-link text-decoration-none"]${article.title}[/@A]
+                        <span>${format(article.publishDate, 'yyyy-MM-dd')}</span>
+                      </li>
+                    [/#list]
+                  </ul>
+                [/#if]
+              [/@ArticleList]
+
+              [@A bean=homeChannel class="home-column-more text-decoration-none"]了解更多[/@A]
+            </article>
+          [/#list]
+        </div>
+      [/@ChannelList]
+    </div>
+  </section>
+</main>
+[#include 'inc_footer.html'/]
+[#include 'inc_message_box.html'/]
+</body>
+</html>
+[/#escape]
